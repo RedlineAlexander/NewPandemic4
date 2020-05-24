@@ -1,10 +1,30 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model IEnumerable<News>
 @{
   <!--------  ViewData["Title"] = "Pandemic information";----- Здесь будет эксепшн ---->
     ViewData["IndexNews"] = "News about pandemic";
+    Layout = "_Layout";
 }
+<table class="table table-sm table-striped">
+    <thead>
+        <tr><th>Id</th><th>Title</th><th>Text</th><th>AuthorName</th><th>IsFake</th></tr>
+    </thead>
+    <tbody>
+        @foreach(var n in ListNews)
+        {
+            <tr>
+                <td>@n.Id</td>
+                <td>@n.Title</td>
+                <td>@n.Text</td>
+                <td>@n.AuthorName</td>
+                <td>@n.IsFake</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 <table>
     <thead>
         
@@ -12,7 +32,7 @@
     </thead>
     <tbody>
         <tr>
-            <td>Plus</td>
+            <td></td>
        </tr>
     </tbody>
 </table>
