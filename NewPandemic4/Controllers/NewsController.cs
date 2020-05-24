@@ -31,7 +31,7 @@ namespace NewPandemic4.Controllers
         }
         public IActionResult Show(int newsId)
         {
-            ViewData["key"] = _repository.GetAllNews();
+            ViewData["key"] = _repository.GetAllNews().SingleOrDefault(news=>news.Id ==newsId);
             return View();
         }
         public IActionResult Privacy()
