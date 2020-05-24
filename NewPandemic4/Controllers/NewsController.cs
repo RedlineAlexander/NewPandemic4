@@ -22,17 +22,17 @@ namespace NewPandemic4.Controllers
         }
 
 
-        public IActionResult Index() {
+        public IActionResult IndexNews() {
 
 
 
             ViewData["key"] = _repository.GetAllNews();
-            return View();
+            return View("IndexNews");
         }
         public IActionResult Show(int newsId)
         {
             ViewData["key"] = _repository.GetAllNews().SingleOrDefault(news=>news.Id ==newsId);
-            return View();
+            return View("IndexNews");
         }
         public IActionResult Privacy()
         {
