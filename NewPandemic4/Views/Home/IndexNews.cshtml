@@ -12,7 +12,8 @@
         <tr><th>Id</th><th>Title</th><th>Text</th><th>AuthorName</th><th>IsFake</th></tr>
     </thead>
     <tbody>
-        @foreach(var n in ListNews)
+    <!----   @foreach(var n in ListNews)----->
+        foreach(var n in IndexNews)
         {
             <tr>
                 <td>@n.Id</td>
