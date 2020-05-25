@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    var human = ViewData["human"] as Human;
+}
+
+<h1>Index</h1>
+
+<table>
+    <tr>
+        <td>@human.Id</td>
+        <td>@human.FirstName</td>
+        <td>@human.LastName</td>
+        <td>@human.Age</td>
+        <td>@human.IsSick</td>
+        <td>@human.Gender</td>
+    </tr>
+</table>

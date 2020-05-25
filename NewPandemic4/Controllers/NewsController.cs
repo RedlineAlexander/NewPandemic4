@@ -27,7 +27,7 @@ namespace NewPandemic4.Controllers
 
 
             ViewData["key"] = _repository.GetAllNews();
-            return View("IndexNews");
+            return View();
         }
         public IActionResult Show(int newsId)
         {

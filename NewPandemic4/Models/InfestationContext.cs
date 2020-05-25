@@ -11,6 +11,11 @@ namespace NewPandemic4.Models
         public DbSet<Country> Countries { get; set; }
         public DbSet<Human> Humans { get; set; }
 
+        InfestationContext infestationContext { get; set; }
+        public InfestationContext(InfestationContext context)
+        {
+            infestationContext = context;
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
