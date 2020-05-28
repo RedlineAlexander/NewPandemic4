@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NewPandemic4.Models;
 using NewPandemic4.Models.Repositories;
 
 namespace NewPandemic4
@@ -25,6 +27,10 @@ namespace NewPandemic4
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<INewsRepositories, MockNewsRepository>();
+            //Внимание к деталям, при неправильной строке подключения сгенерируется AggregateException и не генерировать в самого себя НИКОГДА!!! CONTEXT
+
+
+            services.AddDbContext<InfestationContext>(builder => builder.UseSqlServer(Configuration.GetConnectionString("InfestationDbConnection")));
             services.AddControllersWithViews();
         }
 
