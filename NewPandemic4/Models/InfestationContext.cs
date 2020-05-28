@@ -42,6 +42,11 @@ Action Country должен принимать один параметр - name(
 Удалите перегрузку метода OnModelCreating из вашего класса контекста(тот который унаследован от DbContext).
 Добавьте новую миграцию чтоб пересобрать InfestationContextModelSnapshot и обновите базу. 
 Добавьте несколько собственных человеков с помощью migrationBuilder в методе Up(для этого вам понадобится еще одна миграция).
+
+
+На уроке мы использовали перегруженый метод OnModelCreating для добавления страны и пары персонажей в базу, 
+поскольку это изменяемые данные, мы не хотим, чтоб он находились в нашем InfestationContextModelSnapshot. 
+Удалите перегрузку метода OnModelCreating из вашего класса контекста(тот который унаследован от DbContext).
  */
 namespace NewPandemic4.Models
 {
@@ -61,5 +66,17 @@ namespace NewPandemic4.Models
         //   {
         //      optionsBuilder.UseSqlServer("Data Source=DESKTOP-V020Q9R;   Initial Catalog=NewPandemic4; Integrated Security=SSPI;");
         // }
+
+        //НЕ ЗАПУСКАТЬ. ЧРЕВАТО INVALIDOPERATIONEXCEPTION при MIGRATION
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+       // {
+
+       //     modelBuilder.Entity<Human>().Property(h => h.FirstName).HasColumnType("varchar(30)");
+         //   modelBuilder.Entity<Human>().ToTable("Human").HasKey(h => h.Age);
+         //   modelBuilder.Entity<Human>().Property(h => h.Country).IsRequired().HasMaxLength(30);
+       //    
+
+                
+         //       }
     }
 }
