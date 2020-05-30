@@ -27,7 +27,7 @@ namespace NewPandemic4.Controllers
         }
         public IActionResult Country(string name)
         {
-            ViewData["human"] = _context.Humans.ToList();
+            ViewData["human"] = _context.GetAllHumans(.ToList();
             return View();
         }
     }

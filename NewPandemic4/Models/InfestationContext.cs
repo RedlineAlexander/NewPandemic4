@@ -64,6 +64,19 @@ namespace NewPandemic4.Models
         }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Human> Humans { get; set; }
+
+        //НЕЛЬЗЯ!!!!
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+       // {
+       //     modelBuilder.Entity<Country>().HasData(new Country { Id = 1, Name = "US", Population = 328200000, SickCount = 1647741, DeadCount = 97811, RecoveredCount = 376266, Vaccine = false });
+         //   modelBuilder.Entity<Human>().HasData(new Human { Id = 2, FirstName = "Obi-wan", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 },
+          //      new Human { Id = 2, FirstName = "Sanwise", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 });
+     //   }
+
+        //internal object GetAllHumans()
+     //   {
+         //   throw new NotImplementedException();
+       // }
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //   {
         //      optionsBuilder.UseSqlServer("Data Source=DESKTOP-V020Q9R;   Initial Catalog=NewPandemic4; Integrated Security=SSPI;");
@@ -71,14 +84,14 @@ namespace NewPandemic4.Models
 
         //НЕ ЗАПУСКАТЬ. ЧРЕВАТО INVALIDOPERATIONEXCEPTION при MIGRATION
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
-       // {
+        // {
 
-       //     modelBuilder.Entity<Human>().Property(h => h.FirstName).HasColumnType("varchar(30)");
-         //   modelBuilder.Entity<Human>().ToTable("Human").HasKey(h => h.Age);
-         //   modelBuilder.Entity<Human>().Property(h => h.Country).IsRequired().HasMaxLength(30);
-       //    
+        //     modelBuilder.Entity<Human>().Property(h => h.FirstName).HasColumnType("varchar(30)");
+        //   modelBuilder.Entity<Human>().ToTable("Human").HasKey(h => h.Age);
+        //   modelBuilder.Entity<Human>().Property(h => h.Country).IsRequired().HasMaxLength(30);
+        //    
 
-                
-         //       }
+
+        //       }
     }
 }

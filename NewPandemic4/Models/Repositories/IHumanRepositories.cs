@@ -7,17 +7,28 @@ using System.Threading.Tasks;
    Пусть этот интерфейс содержит пять методов GetAllHumans, GetHuman, CreateHuman, ModifyHuman, KillHuman. 
    Создайте класс реализующий этот интерфейс, назовите его SqlHumanRepository. 
    Реализуйте все методы из интерфейса. Досуп к сущности Humans вы сможете получить используя ваш класс контекста.
+
+    public interface IRepository<T> where T : class
+{
+   IEnumerable<T> SelectAll(); 
+   T SelectById(int id);
+   void Insert(T obj);
+  void Update(T obj);
+   void Delete(T obj);
+    void Save();
+   }
+
  */
 namespace NewPandemic4.Models.Repositories
 {
-  public  interface IHumanRepositories
+  public  interface IHumanRepositories<T> where T : class
     {
-        public List<Human> GetAllHumans();
-        public string GetHuman();
-        public Human CreateHuman();
+        public IQueryable<T> GetAllHumans();
+        public IQueryable<T> GetHuman();
+        public void CreateHuman(T item);
 
-        public void ModifyHuman();
-        public Human KillHuman();
+        public void ModifyHuman(T item);
+        public Human DeleteHuman(T item);
 
     }
 }
