@@ -75,17 +75,19 @@ namespace NewPandemic4.Models
 {
     public class InfestationContext : DbContext
     {
-    
+
 
         InfestationContext _context { get; set; }
         public InfestationContext(DbContextOptions options) : base(options)
         {
-           // _context = context; AGGREGATEEXCEPTION
+            // _context = context; AGGREGATEEXCEPTION
             //сontext = infestationContext; нельзя
         }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Human> Humans { get; set; }
 
+
+        public DbSet<News> News { get; set; }
         //НЕЛЬЗЯ!!!!
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
        // {

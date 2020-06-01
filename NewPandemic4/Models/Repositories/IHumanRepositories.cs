@@ -21,10 +21,11 @@ using System.Threading.Tasks;
  */
 namespace NewPandemic4.Models.Repositories
 {
-  public  interface IHumanRepositories<T> where T : class
+    public interface IHumanRepositories<T> where T : class
     {
+        IQueryable<Human> Humans { get; set; }
         public IQueryable<T> GetAllHumans();
-        public IQueryable<T> GetHuman();
+      //  public IQueryable<T> GetHuman();
         public void CreateHuman(T item);
 
         public void ModifyHuman(T item);

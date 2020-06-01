@@ -34,11 +34,11 @@ namespace NewPandemic4.Controllers
            ViewData["human"] = _context.Humans.SingleOrDefault(human => human.Id == id);
             return View();
         }
-        public IActionResult Country(string name)
-        {
-            ViewData["human"] = _context.GetAllHumans(.ToList();
-            return View();
-        }
-        public IAc
+       // public IActionResult Country(string name)
+   //     {
+       //     ViewData["human"] = _context.GetAllHumans(.ToList();
+    //        return View();
+    //    }
+     //   public IAc
     }
 }

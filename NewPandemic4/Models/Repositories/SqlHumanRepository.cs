@@ -49,6 +49,8 @@ namespace NewPandemic4.Models.Repositories
         private readonly InfestationContext dbcontext;
         protected readonly DbSet<T> dbSet;
 
+        public IQueryable<Human> Humans { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public SqlHumanRepository(InfestationContext dbcontext)
         {
             this.dbcontext = dbcontext;
@@ -74,12 +76,13 @@ namespace NewPandemic4.Models.Repositories
          //   throw new NotImplementedException();
         }
 
-        public IQueryable<T> GetHuman()
-        {
-            return dbSet.Where();
+      // public IQueryable<T> GetHuman() {
+          //  return new IQueryable<T>();
+         //   return dbSet.ToList();
+           // return dbSet.Where();
 
           //  throw new NotImplementedException();
-        }
+   //     }
 
         public void ModifyHuman(T item)
         {
@@ -88,5 +91,11 @@ namespace NewPandemic4.Models.Repositories
 
             //throw new NotImplementedException();
         }
+
+        Human IHumanRepositories<T>.DeleteHuman(T item)
+        {
+            throw new NotImplementedException();
+        }
     }
+    
 }
