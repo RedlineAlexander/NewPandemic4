@@ -89,12 +89,13 @@ namespace NewPandemic4.Models
 
         public DbSet<News> News { get; set; }
         //НЕЛЬЗЯ!!!!
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-       // {
-       //     modelBuilder.Entity<Country>().HasData(new Country { Id = 1, Name = "US", Population = 328200000, SickCount = 1647741, DeadCount = 97811, RecoveredCount = 376266, Vaccine = false });
-         //   modelBuilder.Entity<Human>().HasData(new Human { Id = 2, FirstName = "Obi-wan", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 },
-          //      new Human { Id = 2, FirstName = "Sanwise", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 });
-     //   }
+        //ЧТОБЫ ПОБЕДИТЬ ЭТОТ ЭКСЕПШН НЕОБХОДИМО ВНИМАТЕЛЬНО ПОСМОТРЕТЬ УНИКАЛЬНЫЕ ПОЛЯ!!!АЙДИ
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+           modelBuilder.Entity<Country>().HasData(new Country { Id = 3, Name = "US", Population = 328200000, SickCount = 1647741, DeadCount = 97811, RecoveredCount = 376266, Vaccine = false });
+            modelBuilder.Entity<Human>().HasData(new Human { Id = 4, FirstName = "Obi-wan", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 },
+                new Human { Id = 2, FirstName = "Sanwise", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 });
+        }
 
         //internal object GetAllHumans()
      //   {
@@ -106,8 +107,8 @@ namespace NewPandemic4.Models
         // }
 
         //НЕ ЗАПУСКАТЬ. ЧРЕВАТО INVALIDOPERATIONEXCEPTION при MIGRATION
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
+     //   protected override void OnModelCreating(ModelBuilder modelBuilder)
+       //  {
 
         //     modelBuilder.Entity<Human>().Property(h => h.FirstName).HasColumnType("varchar(30)");
         //   modelBuilder.Entity<Human>().ToTable("Human").HasKey(h => h.Age);
