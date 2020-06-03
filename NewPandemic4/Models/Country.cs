@@ -16,5 +16,7 @@ namespace NewPandemic4.Models
         public bool Vaccine { get; set; }
 
         public List<Human> Humans { get; set; }
+
+        public List<WorldPart> WorldParts { get; set; }
     }
 }

@@ -88,6 +88,8 @@ namespace NewPandemic4.Models
 
 
         public DbSet<News> News { get; set; }
+        public DbSet<WorldPart> WorldParts { get; set; }
+
         //НЕЛЬЗЯ!!!!
         //ЧТОБЫ ПОБЕДИТЬ ЭТОТ ЭКСЕПШН НЕОБХОДИМО ВНИМАТЕЛЬНО ПОСМОТРЕТЬ УНИКАЛЬНЫЕ ПОЛЯ!!!АЙДИ
         protected override void OnModelCreating(ModelBuilder modelBuilder)
