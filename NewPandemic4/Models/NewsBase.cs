@@ -7,6 +7,7 @@ namespace NewPandemic4.Models
 {
     public class NewsBase
     {
+        //Зачем Удалять AuthorNamе и ставить Author ID. У нас что в таблице Human будут как авторы новостей так и счет людей которые перенесли инфекцию????
         public static List<News> ListNews = new List<News>
         {
              new News { Id = 0, Title = "Humanity finally colonized the Mercury!!", Text = "", AuthorName = "Jeremy Clarkson", IsFake = true},

@@ -95,7 +95,20 @@ namespace NewPandemic4.Models
         //Сейчасбудет заполнение значениями для миграции с таблицей WorldPart 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-          // modelBuilder.Entity<Country>().HasData(new Country { Id = 3, Name = "US", Population = 328200000, SickCount = 1647741, DeadCount = 97811, RecoveredCount = 376266, Vaccine = false });
+            modelBuilder.Entity<WorldPart>().HasData(new WorldPart {Id = 1, Name="America North"},
+            new WorldPart    { Id = 2, Name = "America Sourth"},
+           new WorldPart      { Id = 3, Name = "Europe"},
+                new WorldPart  { Id = 4, Name = "Asia"},
+          new WorldPart  {Id = 5, Name = "Africa" },
+          new WorldPart  { Id = 6, Name = "Australia"});
+            // modelBuilder.Entity<Country>().HasData(new Country { Id = 3, Name = "US", Population = 328200000, SickCount = 1647741, DeadCount = 97811, RecoveredCount = 376266, Vaccine = false });
+            modelBuilder.Entity<Country>().HasData(new Country { Id = 4, Name = "Brazil", Population = 209500000, SickCount = 558000, DeadCount = 31309, RecoveredCount = 241000, Vaccine = false },
+                  new Country { Id = 5, Name = "Spain", Population = 46940000, SickCount = 240000, DeadCount = 27127, RecoveredCount = 150000, Vaccine = false },
+                  new Country { Id = 6, Name = "Morocco", Population = 36300000, SickCount = 7866, DeadCount = 206, RecoveredCount = 6410, Vaccine = false },
+                  new Country { Id = 7, Name = "China", Population = 193000000, SickCount = 83021, DeadCount = 4634, RecoveredCount = 78314, Vaccine = false },
+                  new Country { Id = 8, Name = "Australia", Population = 24000000, SickCount = 7219, DeadCount = 102, RecoveredCount = 7219, Vaccine = false }
+
+                  );
            // modelBuilder.Entity<Human>().HasData(new Human { Id = 4, FirstName = "Obi-wan", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 },
              //   new Human { Id = 2, FirstName = "Sanwise", LastName = "Gamgee", Age = 54, IsSick = false, Gender = "Male", CountryId = 1 });
         }

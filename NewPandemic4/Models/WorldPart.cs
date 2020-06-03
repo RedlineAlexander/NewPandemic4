@@ -13,7 +13,7 @@ namespace NewPandemic4.Models
         public int Id { get; set; }
         public string Name { get; set; }
         //В ЧЕМ РАЗНИЦА???
-        public List<Country> Countries { get; set; }
+        //public List<Country> Countries { get; set; }
 
         public Country Country { get; set; }
     }

@@ -11,7 +11,8 @@ namespace NewPandemic4.Models
         public string Title { get; set; }
         public string Text { get; set; }
         //Смена поля  для выполнения домашнего задания номер 6
-        //public string AuthorName { get; set; }
+        //Если закомментировать следующее поле , то произойдет ошибка компиляции и нужно будет менять коллекцию целиком 
+        public string AuthorName { get; set; }
         public Human AuthorId { get; set; }
         public bool IsFake { get; set; }
     }
